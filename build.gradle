@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+}
+
+group 'quru.qa'
+version '1.0-SNAPSHOT'
+
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation (
+            'com.codeborne:selenide:6.8.1',
+            'org.junit.jupiter:junit-jupiter:5.9.0',
+            'org.assertj:assertj-core:3.23.1',
+            'com.codeborne:pdf-test:1.7.0',
+            'com.codeborne:xls-test:1.4.3',
+            'com.opencsv:opencsv:5.7.0',
+            'org.projectlombok:lombok:1.18.24',
+            'com.fasterxml.jackson.core:jackson-databind:2.13.4',
+            'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.4'
+    )
+}
+
+test {
+    useJUnitPlatform()
+}
